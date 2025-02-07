@@ -1,5 +1,14 @@
-# Vue 3 + TypeScript + Vite
+# Juego de Memorama
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Despliegue
+El proyecto fue desplegado en Vercel, gracias a la facilidad de despliegue por su automatización de CD/CI permite hacer despliegues rápidos y eficientes.
+¡A Jugar! -> https://memorize-seven.vercel.app/
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Instalación Local
+1. Clonar el repositorio público.
+2. Contar mínimo con Node JS 20.
+3. Posicionarse en la raíz del proyecto ya clonado.
+4. npm install
+5. npm run dev
+6. Acceder al navegador en el puerto indicado por la consola
+7. ¡A Jugar!
