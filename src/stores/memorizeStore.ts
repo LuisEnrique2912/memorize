@@ -128,7 +128,9 @@ export const useMemorizeStore = defineStore('memorize', {
                         secondSelection.keep = true;
                         this.addHit()
                         this.checkAllImagesKeep();
-                        this.savePlayerScore();
+                        if (this.openCongratsModal) {
+                            this.savePlayerScore();
+                        }
                     } else {
                         firstSelection.active = false;
                         secondSelection.active = false;
@@ -138,20 +140,27 @@ export const useMemorizeStore = defineStore('memorize', {
             }
         },
         savePlayerScore() {
+            console.log("Guardado")
             let totalMovements = this.hits + this.misses;
             if (this.gameLevel === 1) {
                 if (totalMovements < parseInt(this.easyMaxScore)) {
                     console.log(totalMovements)
+                    localStorage.setItem('easy', totalMovements.toString());
+                } else if (parseInt(this.easyMaxScore) == 0) {
                     localStorage.setItem('easy', totalMovements.toString());
                 }
             } else if (this.gameLevel === 2) {
                 if (totalMovements < parseInt(this.mediumMaxScore)) {
                     console.log(totalMovements)
                     localStorage.setItem('medium', totalMovements.toString());
+                } else if (parseInt(this.mediumMaxScore) == 0) {
+                    localStorage.setItem('medium', totalMovements.toString());
                 }
             } else if (this.gameLevel === 3) {
                 if (totalMovements < parseInt(this.hardMaxScore)) {
                     console.log(totalMovements)
+                    localStorage.setItem('hard', totalMovements.toString());
+                } else if (parseInt(this.hardMaxScore) == 0) {
                     localStorage.setItem('hard', totalMovements.toString());
                 }
             }
