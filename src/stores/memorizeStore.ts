@@ -141,14 +141,17 @@ export const useMemorizeStore = defineStore('memorize', {
             let totalMovements = this.hits + this.misses;
             if (this.gameLevel === 1) {
                 if (totalMovements < parseInt(this.easyMaxScore)) {
+                    console.log(totalMovements)
                     localStorage.setItem('easy', totalMovements.toString());
                 }
             } else if (this.gameLevel === 2) {
                 if (totalMovements < parseInt(this.mediumMaxScore)) {
+                    console.log(totalMovements)
                     localStorage.setItem('medium', totalMovements.toString());
                 }
             } else if (this.gameLevel === 3) {
                 if (totalMovements < parseInt(this.hardMaxScore)) {
+                    console.log(totalMovements)
                     localStorage.setItem('hard', totalMovements.toString());
                 }
             }
